@@ -20,9 +20,11 @@ namespace Panschgo
         {
             // logic
         }
+        /*
         public Cell GetCell (int x, int y)
         {
             //logic
         }
+        */
     }
 }

@@ -20,9 +20,25 @@ namespace Panschgo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Board _boardTopLeft;
+        private Board _boardTopRight;
+        private Board _boardBottomLeft;
+        private Board _boardBottomRight;
         public MainWindow()
         {
             InitializeComponent();
+            _boardTopLeft = new Board(canvasQuadrantTopLeft, 3, 3);
+            _boardTopRight = new Board(canvasQuadrantTopRight, 3, 3);
+            _boardBottomLeft = new Board(canvasQuadrantBottomLeft, 3, 3);
+            _boardBottomRight = new Board(canvasQuadrantBottomRight, 3, 3);
+        }
+
+        private void ButtonReset(object sender, RoutedEventArgs e)
+        {
+            _boardTopLeft.Reset();
+            _boardTopRight.Reset();
+            _boardBottomLeft.Reset();
+            _boardBottomRight.Reset();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Panschgo
         public bool HasWon(Board Board)
         {
             // logic
+            return true;
         }
     }
 }

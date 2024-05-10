@@ -17,7 +17,7 @@ namespace Panschgo
         {
             Player1 = new Player();
             Player2 = new Player();
-            Board = new Board();
+            //Board = new Board();
         }
 
         
@@ -32,6 +32,7 @@ namespace Panschgo
         public bool IsGameOver()
         {
             // logic
+            return true;
         }
     }
 }

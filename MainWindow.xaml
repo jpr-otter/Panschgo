@@ -7,9 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="800">
     <Grid>
-        <Button Content="Reset Game" HorizontalAlignment="Left" Margin="628,64,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="5.177,0.14"/>
-      
-        
+        <Button Content="Reset Game" HorizontalAlignment="Left" Margin="628,64,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="5.177,0.14" Click="ButtonReset"/>
+
+        <Canvas x:Name="canvasQuadrantTopLeft" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Margin="10,10,0,0">
+            <Canvas Height="250" Width="250"/>
+        </Canvas>
+
+        <Canvas x:Name="canvasQuadrantTopRight" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Margin="259,10,0,0"/>
+
+
+        <Canvas x:Name="canvasQuadrantBottomRight" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Margin="259,260,0,0"/>
+
+
+        <Canvas x:Name="canvasQuadrantBottomLeft" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Margin="10,260,0,0"/>
+
+
+
+
 
     </Grid>
 </Window>

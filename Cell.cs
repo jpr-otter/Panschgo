@@ -15,6 +15,7 @@ namespace Panschgo
         public bool IsEmpty()
         {
             //logic
+            return true;
         }
     }
 }
