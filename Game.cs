@@ -15,8 +15,8 @@ namespace Panschgo
 
         public Game()
         {
-            Player1 = new Player();
-            Player2 = new Player();
+            //Player1 = new Player();
+            //Player2 = new Player();
             //Board = new Board();
         }
 

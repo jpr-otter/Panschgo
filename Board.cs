@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Reflection.Emit;
 
 namespace Panschgo
 {
@@ -15,6 +16,7 @@ namespace Panschgo
         private Canvas _canvas;
         private int _boardPositionsX;
         private int _boardPositionsY;
+        public Player CurrentPlayer { get; set; }
 
         public Board(Canvas canvas, int boardPositionsX, int boardPositionsY)
         {
@@ -28,7 +30,7 @@ namespace Panschgo
             //    Quadrants[i] = new Quadrant();
             //}
         }
-        public void Reset()
+        public void Reset(Player currentPlayer, Player player1, Player player2)
         {
             _canvas.Children.Clear();
 
@@ -40,6 +42,18 @@ namespace Panschgo
                     rect.Width = _canvas.ActualWidth / _boardPositionsX - 2.0;
                     rect.Height = _canvas.ActualHeight / _boardPositionsY - 2.0;
                     rect.Fill = Brushes.DarkCyan;
+
+                    rect.MouseLeftButtonDown += (sender, e) =>
+                    {
+                        Rectangle? clickedRect = sender as Rectangle;
+                        if (clickedRect != null && clickedRect.Fill == Brushes.DarkCyan)
+                        {
+                            clickedRect.Fill = currentPlayer.Color;
+                            currentPlayer = currentPlayer == player1 ? player2 : player1;
+
+                        }
+                    };
+
                     _canvas.Children.Add(rect);
                     Canvas.SetLeft(rect, j * _canvas.ActualWidth / _boardPositionsX);
                     Canvas.SetTop(rect, i * _canvas.ActualHeight / _boardPositionsY);
